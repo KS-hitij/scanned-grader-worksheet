@@ -1,4 +1,4 @@
-import { ChromaClient, Limit } from "chromadb";
+import { ChromaClient } from "chromadb";
 import { GoogleGeminiEmbeddingFunction } from "@chroma-core/google-gemini";
 import { PDFParse } from "pdf-parse";
 
