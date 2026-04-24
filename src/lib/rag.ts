@@ -23,7 +23,7 @@ async function initializeCollection() {
         collection = await chromaClient.getOrCreateCollection({
             name: "scanned-worker-grader-collection",
             embeddingFunction: new GoogleGeminiEmbeddingFunction({
-                apiKey: process.env.GOOGLE_API_KEY || "",
+                apiKey: process.env.GEMINI_API_KEY || "",
                 modelName: "gemini-embedding-001"
             }),
             metadata: {
