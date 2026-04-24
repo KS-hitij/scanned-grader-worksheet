@@ -1,34 +1,6 @@
-"use client";
-import { useState } from "react";
-import { Upload, CheckCircle, Zap } from "lucide-react";
+import { CheckCircle, Zap, Upload } from "lucide-react";
 
 export default function Home() {
-  const [answerKeyFile, setAnswerKeyFile] = useState<File | null>(null);
-  const [answerSheetFile, setAnswerSheetFile] = useState<File | null>(null);
-
-  const handleAnswerKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.[0]) {
-      setAnswerKeyFile(e.target.files[0]);
-    }
-  };
-
-  const handleAnswerSheetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.[0]) {
-      setAnswerSheetFile(e.target.files[0]);
-    }
-  };
-
-  const handleUploadAnswerKey = async () => {
-    if (!answerKeyFile) return;
-    // TODO: Call uploadAnswers API
-    console.log("Uploading answer key:", answerKeyFile.name);
-  };
-
-  const handleGradeSheet = async () => {
-    if (!answerSheetFile) return;
-    // TODO: Call gradeAnswerSheet API
-    console.log("Grading sheet:", answerSheetFile.name);
-  };
 
   return (
     <main className="min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
@@ -91,91 +63,6 @@ export default function Home() {
             <p className="text-slate-400">
               Get precise grading with detailed explanations for each answer.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Upload Section */}
-      <section className="max-w-6xl mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-white text-center mb-12">
-          Start Grading
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Answer Key Upload */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8 hover:border-blue-500/50 transition-colors">
-            <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-              <Upload className="w-6 h-6 text-blue-400" />
-              Upload Answer Key
-            </h3>
-            <p className="text-slate-400 mb-6">
-              Upload a PDF containing the correct answers. This will be used to grade all student sheets.
-            </p>
-
-            <div className="relative">
-              <input
-                type="file"
-                accept=".pdf"
-                onChange={handleAnswerKeyChange}
-                className="hidden"
-                id="answer-key-input"
-              />
-              <label
-                htmlFor="answer-key-input"
-                className="block border-2 border-dashed border-slate-600 rounded-lg p-8 text-center cursor-pointer hover:border-blue-500 hover:bg-blue-500/5 transition-all"
-              >
-                <Upload className="w-8 h-8 text-slate-400 mx-auto mb-2" />
-                <p className="text-slate-300">
-                  {answerKeyFile ? answerKeyFile.name : "Click to select PDF"}
-                </p>
-              </label>
-            </div>
-
-            <button
-              onClick={handleUploadAnswerKey}
-              disabled={!answerKeyFile}
-              className="w-full mt-6 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-            >
-              Upload Answer Key
-            </button>
-          </div>
-
-          {/* Answer Sheet Upload */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-8 hover:border-purple-500/50 transition-colors">
-            <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-              <CheckCircle className="w-6 h-6 text-purple-400" />
-              Grade Answer Sheet
-            </h3>
-            <p className="text-slate-400 mb-6">
-              Upload a scanned image of a student's answer sheet to get instant grading results.
-            </p>
-
-            <div className="relative">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleAnswerSheetChange}
-                className="hidden"
-                id="answer-sheet-input"
-              />
-              <label
-                htmlFor="answer-sheet-input"
-                className="block border-2 border-dashed border-slate-600 rounded-lg p-8 text-center cursor-pointer hover:border-purple-500 hover:bg-purple-500/5 transition-all"
-              >
-                <Upload className="w-8 h-8 text-slate-400 mx-auto mb-2" />
-                <p className="text-slate-300">
-                  {answerSheetFile ? answerSheetFile.name : "Click to select image"}
-                </p>
-              </label>
-            </div>
-
-            <button
-              onClick={handleGradeSheet}
-              disabled={!answerSheetFile}
-              className="w-full mt-6 bg-linear-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 disabled:from-slate-600 disabled:to-slate-700 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-            >
-              Grade Answer Sheet
-            </button>
           </div>
         </div>
       </section>
