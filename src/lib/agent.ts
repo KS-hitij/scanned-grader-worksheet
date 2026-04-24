@@ -47,7 +47,7 @@ const upload = tool(async ({ pdfBase64, fileName }: { pdfBase64: string, fileNam
     })
 });
 const model = new ChatGoogleGenerativeAI({
-    model: "gemini-2.5-flash-lite",
+    model: "gemini-3-flash-preview",
     apiKey: process.env.GEMINI_API_KEY || "",
 });
 
