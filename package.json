@@ -13,6 +13,8 @@
     "@chroma-core/google-gemini": "^0.1.10",
     "@google/genai": "^1.50.1",
     "@langchain/core": "^1.1.40",
+    "@langchain/google-genai": "^2.1.28",
+    "@langchain/google-vertexai": "^2.1.28",
     "@types/axios": "^0.9.36",
     "@types/pdf-parse": "^1.1.5",
     "axios": "^1.15.2",
