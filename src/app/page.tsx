@@ -1,4 +1,5 @@
 import { CheckCircle, Zap, Upload } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -24,9 +25,9 @@ export default function Home() {
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+            <Link href="/upload" className="bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
               Get Started
-            </button>
+            </Link>
             <button className="border border-slate-400 text-slate-300 hover:text-white hover:border-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
               Learn More
             </button>

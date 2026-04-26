@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Upload, Database, FileUp, AlertCircle } from "lucide-react";
 import SampleFormat from "../components/sampleFormat";
 import axios from 'axios';
@@ -232,6 +233,11 @@ export default function UploadPage() {
                         >
                             Clear
                         </button>
+                        <Link href="/grade">
+                            <button className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-colors">
+                                Go to Grade
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>

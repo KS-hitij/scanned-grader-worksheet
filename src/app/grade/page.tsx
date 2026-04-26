@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Upload, CheckCircle, AlertCircle, Loader, Image as ImageIcon } from "lucide-react";
 import axios from "axios";
 
@@ -254,6 +255,11 @@ export default function GradePage() {
                         >
                             Clear
                         </button>
+                        <Link href="/upload">
+                            <button className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-colors">
+                                Go to Upload
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Results Table */}
